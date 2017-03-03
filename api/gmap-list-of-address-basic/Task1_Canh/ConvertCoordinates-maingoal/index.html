@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Places Search Box</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script type="text/javascript" src="./script.js"></script>
+  </head>
+  <body>
+     <input id="pac-input" class="controls" type="text" placeholder=" Input address" autocomplete="off" style="z-index: 0;position: absolute;;left: 114px;top: 15px">
+    <div id="infowindow-content">
+      <span id="place-name " class="title"></span> </br>
+      <span id="place-address">
+    </div>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdH3V9_4-cU23wypZEmF-FL7o9QS0iaZI&libraries=places&callback=initAutocomplete" 
+        async defer></script> 
+  </body>
+</html>

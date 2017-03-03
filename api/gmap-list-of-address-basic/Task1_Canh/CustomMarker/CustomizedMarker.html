@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Markers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+       @media screeen and
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: new google.maps.LatLng(10.7714783,106.6974142),
+          mapTypeId: 'roadmap'
+        });
+        var iconShapes = 'http://maps.google.com/mapfiles/kml/shapes/'
+        var iconPushpin= 'http://maps.google.com/mapfiles/kml/pushpin/'
+        var iconPaddle= 'http://maps.google.com/mapfiles/kml/paddle/'
+        var iconKml= 'http://earth.google.com/images/kml-icons/'
+        var iconPal2= 'http://maps.google.com/mapfiles/kml/pal2/'
+        var iconPal3= 'http://maps.google.com/mapfiles/kml/pal3'
+        var iconPal4= 'http://maps.google.com/mapfiles/kml/pal4'
+        var iconPal5= 'http://maps.google.com/mapfiles/kml/pal5'
+        var iconMapfiles= 'http://maps.google.com/mapfiles/'
+         var icons = {
+          BusStation: {
+            icon: iconShapes + 'bus.png'
+          },
+          restaurant: {
+            icon: iconPal2 + 'icon41.png'
+          },
+          coffee: {
+            icon: iconPal2 +  'icon54.png'
+          },
+          maket:{
+            icon: iconShapes +'grocery.png'
+          },
+          shop:{
+            icon: iconShapes +'arts.png'
+          },
+          hotel:{
+            icon: iconShapes +'horsebackriding.png'
+          },
+          hospital:{
+            icon: iconPal3 +'icon46.png'
+          },
+        };
+        function addMarker(feature) {
+          var marker = new google.maps.Marker({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            map: map
+          });
+        }
+        var features = [
+        {
+            position: new google.maps.LatLng(10.7718408,106.6982379),
+            type: 'BusStation'
+            },{
+            position: new google.maps.LatLng(10.7726654,106.6979314),
+            type: 'maket'
+          },{
+            position: new google.maps.LatLng(10.7718251,106.6974196),
+            type: 'restaurant'
+          }, {
+            position: new google.maps.LatLng(10.7729823,106.6984249),
+            type: 'coffee'
+          }, {
+            position: new google.maps.LatLng(10.7722467,106.6971943),
+            type: 'BusStation'
+          }, {
+            position: new google.maps.LatLng(10.7717566,106.6968778),
+            type: 'restaurant'
+          }, {
+            position: new google.maps.LatLng(10.7718989,106.6970173),
+            type: 'coffee'
+          }, {
+            position: new google.maps.LatLng(10.7718989,106.6970173),
+            type: 'shop'
+          }, {
+            position: new google.maps.LatLng(10.7725313,106.6976825),
+            type: 'hotel'
+          }, {
+            position: new google.maps.LatLng(10.7724048,106.6974357),
+            type: 'hotel'
+          }, {
+            position: new google.maps.LatLng(10.7724048,106.6974357),
+            type: 'hotel'
+          }, {
+            position: new google.maps.LatLng(10.7715985,106.6979829),
+            type: 'hotel'
+          }, {
+            position: new google.maps.LatLng(10.7718093,106.6984335),
+            type: 'hospital'
+          }, {
+            position: new google.maps.LatLng(10.7718093,106.6984335),
+            type: 'coffee'
+          }, {
+            position: new google.maps.LatLng(10.7718093,106.69843354),
+            type: 'restaurant'
+          }, {
+            position: new google.maps.LatLng(10.7698235,106.6984335),
+            type: 'BusStation'
+          }, {
+            position: new google.maps.LatLng(10.7707774,106.698235),
+            type: 'BusStation'
+          }, {
+            position: new google.maps.LatLng(10.7707774,106.698235),
+            type: 'BusStation'
+          }
+        ];
+        for (var i = 0,feature; feature = features[i]; i++) 
+        {
+          addMarker(feature);}
+
+      }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdH3V9_4-cU23wypZEmF-FL7o9QS0iaZI&callback=initMap">
+    </script>
+  </body>
+</html>

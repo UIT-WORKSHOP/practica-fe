@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Styled Maps - Night Mode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        // Styles a map customized
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 10.772553, lng: 106.6979232},
+          zoom: 15,
+          styles: [
+            {elementType: 'geometry', stylers: [{color: '#3b473f'}]}, //Màu của bản đồ
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]}, // Màu của những chữ xuất hiện trên bản đồ
+            {elementType: 'labels.text.fill', stylers: [{color: '#fffe41'}]}, // Mùa của những chữ xuất hiện còn lại trên bản đồ
+            {
+              featureType: 'administrative.locality', //Tên các quận ở TP.Hồ Chí Minh thì in đậm màu đỏ 
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f80304'}] // mã màu đỏ
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#0cdc41'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road', // Màu đường bộ
+              elementType: 'geometry',
+              stylers: [{color: '#6c5223'}]
+            },
+            {
+              featureType: 'road', 
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#070bf2'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#3e41ce'}] // Màu tên đường
+            },
+            {
+              featureType: 'road.highway', //Đường cao tốc
+              elementType: 'geometry',
+              stylers: [{color: '#fcfcfb'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill', // Màu tên đường cao tốc
+              stylers: [{color: '#e65006'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'water', //Màu của những nơi có nước (ex: sông, hồ...)
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water', // Màu chữ của tên con sông có nước trên map
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdH3V9_4-cU23wypZEmF-FL7o9QS0iaZI&callback=initMap"
+    async defer></script>
+  </body>
+</html>
