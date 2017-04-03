@@ -4,7 +4,7 @@
 <img src="demoImage.PNG" />
 
 ## Getting started
-1. open Command Prompt and 'cd' to TodoApp
+1. open Command Prompt and 'cd' to Task7-TaCo folder
 2. `npm install`
 3. `webpack-dev-server`
 4. Go to `localhost:8080`
